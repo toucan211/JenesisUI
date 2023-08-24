@@ -5,8 +5,16 @@ using UnityEngine;
 public class UIElement
 {
     public string name;
+    public string type;
     public Vector2 position;
     public Vector2 size;
     public SerializableColor color;
-    public List<UIElement> children = new List<UIElement>();
+    public string text;
+    public List<UIElement> children;
+    public List<int> address;
+
+    public UIElement()
+    {
+
+    }
 }
