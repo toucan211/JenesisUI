@@ -4,7 +4,7 @@
     "position": { "x": 0, "y": 0 },
     "size": { "x": 300, "y": 100 },
     "color": { "r": 0.9, "g": 0.9, "b": 0.9, "a": 1 },
-    "text": "",
+    "text": "Text",
     "children": [
         {
             "name": "TextLabel",

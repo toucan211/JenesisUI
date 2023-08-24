@@ -1,6 +1,5 @@
 using Newtonsoft.Json;
-using System;
-using System.IO;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,28 +25,24 @@ public class UIConstructor : MonoBehaviour
         set => canvasObject = value;
     }
 
-    void Start()
-    {
-        //string json = File.ReadAllText(jsonPath);
-        //ConstructUI(json);
-    }
-
-    public void ConstructUI(string json)
+    public bool ConstructUI(string json)
     {
         try
         {
             UIElement rootElement = JsonConvert.DeserializeObject<UIElement>(json);
             ConstructUI(rootElement, CanvasObject.transform);
+            return true;
         }
-        catch (System.Exception)
+        catch (System.Exception e)
         {
-            CorruptedJSONDetected();
+            CorruptedJSONDetected(e);
+            return false;
         }
     }
 
-    private void CorruptedJSONDetected()
+    private void CorruptedJSONDetected(System.Exception e)
     {
-
+        print($"Invalid JSON: Message:{e.Message}\n StackTrace:{e.StackTrace}");
     }
 
     public void ConstructUI(UIElement element, Transform parentTransform)
@@ -60,14 +55,16 @@ public class UIConstructor : MonoBehaviour
 
         Image image = newElement.AddComponent<Image>();
         image.color = element.color.ToColor();
+        if (!string.IsNullOrEmpty(element.imagePath))
+            image.sprite = AssetDatabase.LoadAssetAtPath<Sprite>(element.imagePath);
 
-        if (element.type == "Button")
+        if (element.UIType == UIType.Button)
         {
             Button button = newElement.AddComponent<Button>();
             Text buttonText = CreateText(newElement.transform, element.text);
             button.targetGraphic = buttonText;
         }
-        else if (element.type == "Text")
+        else if (element.UIType == UIType.Text)
         {
             CreateText(newElement.transform, element.text);
         }
