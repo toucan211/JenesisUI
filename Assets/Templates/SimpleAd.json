@@ -1,0 +1,113 @@
+{
+  "name": "Panel",
+  "UIType": 2,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "magnitude": 0.0,
+    "sqrMagnitude": 0.0
+  },
+  "size": {
+    "x": 600.0,
+    "y": 250.0,
+    "normalized": {
+      "x": 0.9230769,
+      "y": 0.3846154,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 650.0,
+    "sqrMagnitude": 422500.0
+  },
+  "color": {
+    "r": 0.881023169,
+    "g": 1.0,
+    "b": 0.654716969,
+    "a": 1.0
+  },
+  "text": null,
+  "fontSize": 0,
+  "imagePath": null,
+  "imageType": 0,
+  "children": [
+    {
+      "name": "BuyNowButton",
+      "UIType": 0,
+      "position": {
+        "x": 0.0,
+        "y": -160.0,
+        "normalized": {
+          "x": 0.0,
+          "y": -1.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 160.0,
+        "sqrMagnitude": 25600.0
+      },
+      "size": {
+        "x": 600.0,
+        "y": 70.0,
+        "normalized": {
+          "x": 0.9932632,
+          "y": 0.115880705,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 604.0695,
+        "sqrMagnitude": 364900.0
+      },
+      "color": {
+        "r": .5,
+        "g": .5,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "text": "BUY NOW AT 50% OFF !",
+      "fontSize": 0,
+      "imagePath": null,
+      "imageType": 0,
+      "children": [],
+      "address": [
+        0
+      ]
+    },
+    {
+      "name": "Ad",
+      "UIType": 2,
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "size": {
+        "x": 128.0,
+        "y": 128.0,
+        "normalized": {
+          "x": 0.707106769,
+          "y": 0.707106769,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 181.019333,
+        "sqrMagnitude": 32768.0
+      },
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "text": null,
+      "fontSize": 0,
+      "imagePath": "Assets/Sprites/Ad.png",
+      "imageType": 0,
+      "children": [],
+      "address": [
+        0
+      ]
+    }
+  ],
+  "address": []
+}

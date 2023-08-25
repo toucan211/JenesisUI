@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -193,7 +194,8 @@ public class TemplateEditorWindow : EditorWindow
         string newFileName = "NewTemplate" + (fileNames.Length + 1) + ".json";
         File.WriteAllText(Path.Combine(PathToTemplates, newFileName), blueprintJson);
         LoadFileNames();
-        SelectFile(fileNames.Length - 1);
+        int newFileIndex = fileNames.ToList().FindIndex(o => o.Equals(newFileName.Split(".")[0]));
+        SelectFile(newFileIndex);
     }
 
     private void DrawUIElementEditor(UIElement insertUIElement)
