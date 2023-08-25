@@ -14,6 +14,7 @@ public class UIElement
     public Vector2 size;
     public SerializableColor color;
     public string text;
+    public int fontSize;
     public string imagePath;
     public Image.Type imageType;
     public List<UIElement> children = new List<UIElement>();

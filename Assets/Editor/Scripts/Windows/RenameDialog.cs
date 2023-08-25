@@ -24,6 +24,7 @@ public class RenameDialog : EditorWindow
         {
             onRenameConfirmed?.Invoke(newName);
             Close();
+            AssetDatabase.Refresh();
         }
     }
 }

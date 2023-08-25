@@ -1,0 +1,119 @@
+{
+  "name": "BG",
+  "UIType": 2,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "magnitude": 0.0,
+    "sqrMagnitude": 0.0
+  },
+  "size": {
+    "x": 500.0,
+    "y": 800.0,
+    "normalized": {
+      "x": 0.6,
+      "y": 0.8,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 1000.0,
+    "sqrMagnitude": 1000000.0
+  },
+  "color": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 1.0
+  },
+  "text": null,
+  "fontSize": 0,
+  "imagePath": "Assets/Sprites/TiledBG.jpg",
+  "imageType": 0,
+  "children": [
+    {
+      "name": "BookCover",
+      "UIType": 2,
+      "position": {
+        "x": 0.0,
+        "y": 75.0,
+        "normalized": {
+          "x": 0.0,
+          "y": 1.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 75.0,
+        "sqrMagnitude": 5625.0
+      },
+      "size": {
+        "x": 400.0,
+        "y": 500.0,
+        "normalized": {
+          "x": 0.624695,
+          "y": 0.780868769,
+          "normalized": {
+            "x": 0.624695063,
+            "y": 0.7808688,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 640.312439,
+        "sqrMagnitude": 410000.0
+      },
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "text": null,
+      "fontSize": 0,
+      "imagePath": "Assets/Sprites/Book.jpeg",
+      "imageType": 0,
+      "children": [],
+      "address": [
+        0
+      ]
+    },
+    {
+      "name": "BuyNowButton",
+      "UIType": 0,
+      "position": {
+        "x": 0.0,
+        "y": -285,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "size": {
+        "x": 400.0,
+        "y": 150.0,
+        "normalized": {
+          "x": 0.9486833,
+          "y": 0.3162278,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 632.4555,
+        "sqrMagnitude": 400000.0
+      },
+      "color": {
+        "r": .5,
+        "g": .6,
+        "b": .75,
+        "a": 1.0
+      },
+      "text": "Buy Now!",
+      "fontSize": 50,
+      "imagePath": "",
+      "imageType": 0,
+      "children": [],
+      "address": [
+        1
+      ]
+    }
+  ],
+  "address": []
+}

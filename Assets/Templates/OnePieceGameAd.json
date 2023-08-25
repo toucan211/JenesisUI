@@ -1,0 +1,197 @@
+{
+  "name": "SimpleBannerAd",
+  "UIType": 2,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "magnitude": 0.0,
+    "sqrMagnitude": 0.0
+  },
+  "size": {
+    "x": 600.0,
+    "y": 250.0,
+    "normalized": {
+      "x": 0.9230769,
+      "y": 0.3846154,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.0
+    },
+    "magnitude": 650.0,
+    "sqrMagnitude": 422500.0
+  },
+  "color": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 1.0
+  },
+  "text": null,
+  "imagePath": "Assets/Sprites/TiledBG.jpg",
+  "imageType": 2,
+  "children": [
+    {
+      "name": "TopLeftCorner",
+      "UIType": 2,
+      "position": {
+        "x": -275.0,
+        "y": 100.0,
+        "normalized": {
+          "x": -0.939793468,
+          "y": 0.341743082,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.00000012
+        },
+        "magnitude": 292.6175,
+        "sqrMagnitude": 85625.0
+      },
+      "size": {
+        "x": 0.0,
+        "y": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 0.0
+      },
+      "text": null,
+      "imagePath": "",
+      "imageType": 2,
+      "children": [
+        {
+          "name": "Image",
+          "UIType": 2,
+          "position": {
+            "x": 64.0,
+            "y": -64.0,
+            "normalized": {
+              "x": 0.707106769,
+              "y": -0.707106769,
+              "magnitude": 1.0,
+              "sqrMagnitude": 0.99999994
+            },
+            "magnitude": 90.50967,
+            "sqrMagnitude": 8192.0
+          },
+          "size": {
+            "x": 128.0,
+            "y": 128.0,
+            "normalized": {
+              "x": 0.707106769,
+              "y": 0.707106769,
+              "magnitude": 1.0,
+              "sqrMagnitude": 0.99999994
+            },
+            "magnitude": 181.019333,
+            "sqrMagnitude": 32768.0
+          },
+          "color": {
+            "r": 1.0,
+            "g": 1.0,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "text": null,
+          "imagePath": "Assets/Sprites/Zoro.jpeg",
+          "imageType": 2,
+          "children": [],
+          "address": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "Description",
+          "UIType": 1,
+          "position": {
+            "x": 355.0,
+            "y": -100.0,
+            "normalized": {
+              "x": 0.8944272,
+              "y": -0.4472136,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 71.55418,
+            "sqrMagnitude": 5120.0
+          },
+          "size": {
+            "x": 400.0,
+            "y": 200.0,
+            "normalized": {
+              "x": 0.8944272,
+              "y": 0.4472136,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 143.108353,
+            "sqrMagnitude": 20480.0
+          },
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 0.6957458,
+            "a": 1.0
+          },
+          "text":"Set sail in the world of One Piece! Battle fearsome foes, uncover hidden treasures, and strive to achieve the ultimate rank of Pirate King. Whether a new adventurer or seasoned sea dog, the quest for glory awaits you. Join Luffy and the gang in the most thrilling One Piece game ever!",
+"fontSize":50,          
+"imagePath": "",
+          "imageType": 2,
+          "children": [],
+          "address": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "Buy Now",
+          "UIType": 0,
+          "position": {
+            "x": 64.0,
+            "y": -175.0,
+            "normalized": {
+              "x": 0.343466073,
+              "y": -0.939165056,
+              "magnitude": 1.0,
+              "sqrMagnitude": 0.99999994
+            },
+            "magnitude": 186.335724,
+            "sqrMagnitude": 34721.0
+          },
+          "size": {
+            "x": 128.0,
+            "y": 32.0,
+            "normalized": {
+              "x": 0.970142543,
+              "y": 0.242535636,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.00000012
+            },
+            "magnitude": 131.939377,
+            "sqrMagnitude": 17408.0
+          },
+          "color": {
+            "r": 0.9,
+            "g": 0.5,
+            "b": 1.0,
+            "a": 1.0
+          },
+          "text": "Buy Now",
+          "imagePath": "",
+          "imageType": 2,
+          "children": [],
+          "address": [
+            0,
+            1
+          ]
+        }
+      ],
+      "address": [
+        0
+      ]
+    }
+  ],
+  "address": []
+}

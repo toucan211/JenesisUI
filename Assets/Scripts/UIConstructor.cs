@@ -31,7 +31,7 @@ public class UIConstructor : MonoBehaviour
         try
         {
             UIElement rootElement = JsonConvert.DeserializeObject<UIElement>(json);
-            ConstructUI(rootElement, CanvasObject.transform,new List<int>());
+            ConstructUI(rootElement, CanvasObject.transform, new List<int>());
             return true;
         }
         catch (System.Exception e)
@@ -63,6 +63,7 @@ public class UIConstructor : MonoBehaviour
         {
             Button button = newElement.AddComponent<Button>();
             Text buttonText = CreateText(newElement.transform, element.text);
+            buttonText.fontSize = element.fontSize == 0 ? 15 : element.fontSize;
             button.targetGraphic = buttonText;
         }
         else if (element.UIType == UIType.Text)

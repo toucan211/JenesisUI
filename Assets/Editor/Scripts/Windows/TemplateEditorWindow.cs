@@ -91,16 +91,17 @@ public class TemplateEditorWindow : EditorWindow
             serializedObject.Update();
 
             scrollPositionJSONView = EditorGUILayout.BeginScrollView(scrollPositionJSONView, GUILayout.Height(position.height * 0.55f));
-            EditorGUILayout.PropertyField(textAreaContent, GUIContent.none, GUILayout.ExpandHeight(true));
-
-            //selectedFileContent = EditorGUILayout.TextArea(selectedFileContent, GUILayout.ExpandHeight(true));
+            string newContent = EditorGUILayout.TextArea(textAreaContent.stringValue, GUILayout.ExpandHeight(true));
+            if (newContent != textAreaContent.stringValue)
+                textAreaContent.stringValue = newContent;
             bool jsonUpdated = !textData.text.Equals(previousSelectedFileContent);
-            previousSelectedFileContent = textData.text;
             EditorGUILayout.EndScrollView();
+            previousSelectedFileContent = textData.text;
 
             if (jsonUpdated)
             {
                 HandleVisualization();
+                selectedUIElement = JsonConvert.DeserializeObject<UIElement>(textData.text);
             }
 
             if (serializedObject.ApplyModifiedProperties())
@@ -131,10 +132,7 @@ public class TemplateEditorWindow : EditorWindow
                 ShowAvailableTemplates();
 
             if (selectedButton == "InsertUIElement" || selectedButton == "Template")
-            {
-
                 DrawUIElementEditor(insertUIElement);
-            }
 
             if (selectedButton == "RemoveUIElement")
                 DrawRemovalAddress();
@@ -254,8 +252,6 @@ public class TemplateEditorWindow : EditorWindow
         for (int i = 0; i < insertUIElement.address.Count; i++)
             insertUIElement.address[i] = EditorGUILayout.IntField("Address Element " + (i + 1), insertUIElement.address[i]);
 
-        UpdateJSONTextArea();
-
         if (GUILayout.Button("Insert")) InsertEditedUIElement(insertUIElement);
     }
 
@@ -294,16 +290,26 @@ public class TemplateEditorWindow : EditorWindow
     {
         if (selectedUIElement == null) selectedUIElement = uiElement;
         else selectedUIElement.InsertUIElement(uiElement);
+
         UpdateJSONTextArea();
     }
 
     private void UpdateJSONTextArea()
     {
+
         var settings = new JsonSerializerSettings
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
         };
+
         textData.text = JsonConvert.SerializeObject(selectedUIElement, Formatting.Indented, settings);
+        textAreaContent.stringValue = textData.text;
+
+        serializedObject.Update();
+        if (serializedObject.ApplyModifiedProperties())
+        {
+            Undo.RecordObject(textData, "Edit Text Area");
+        }
     }
 
     private void DeleteCurrentUI()
@@ -327,9 +333,12 @@ public class TemplateEditorWindow : EditorWindow
     {
         selectedIndex = index;
         textData.text = File.ReadAllText(Path.Combine(PathToTemplates, fileNames[index] + ".json"));
+        textAreaContent.stringValue = textData.text;
+        serializedObject.Update();
+        serializedObject.ApplyModifiedProperties();
+        GUIUtility.keyboardControl = 0; GUIUtility.hotControl = 0;
         selectedUIElement = JsonConvert.DeserializeObject<UIElement>(textData.text);
         insertUIElement = JsonConvert.DeserializeObject<UIElement>(textData.text);
-
     }
 
     private void LoadFileNames()
