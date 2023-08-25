@@ -26,12 +26,10 @@
                 {
                     "name": "Image",
                     "type": "Panel",
-"UIType":"Panel",
                     "position": { "x": -150, "y": 0 },
                     "size": { "x": 100, "y": 100 },
-                    "color": { "r": 1, "g": 1, "b": 1, "a": 1 },
+                    "color": { "r": 0.6, "g": 0.3, "b": 0.2, "a": 1 },
                     "text": "",
-"imagePath":"Assets/Sprites/Zoro.jpeg",
                     "children": []
                 },
                 {

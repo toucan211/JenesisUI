@@ -1,0 +1,636 @@
+{
+  "name": "BannerAd",
+  "UIType": 0,
+  "position": {
+    "x": 0.0,
+    "y": 0.0,
+    "magnitude": 0.0,
+    "sqrMagnitude": 0.0
+  },
+  "size": {
+    "x": 300.0,
+    "y": 100.0,
+    "normalized": {
+      "x": 0.9486833,
+      "y": 0.3162278,
+      "magnitude": 1.0,
+      "sqrMagnitude": 1.00000012
+    },
+    "magnitude": 316.227753,
+    "sqrMagnitude": 100000.0
+  },
+  "color": {
+    "r": 0.9,
+    "g": 0.9,
+    "b": 0.9,
+    "a": 1.0
+  },
+  "text": "",
+  "imagePath": null,
+  "imageType": 0,
+  "children": [
+    {
+      "name": "ComplexBannerAd",
+      "UIType": 0,
+      "position": {
+        "x": 0.0,
+        "y": -200.0,
+        "normalized": {
+          "x": 0.0,
+          "y": -1.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 200.0,
+        "sqrMagnitude": 40000.0
+      },
+      "size": {
+        "x": 400.0,
+        "y": 200.0,
+        "normalized": {
+          "x": 0.8944272,
+          "y": 0.4472136,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 447.2136,
+        "sqrMagnitude": 200000.0
+      },
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "text": "",
+      "imagePath": null,
+      "imageType": 0,
+      "children": [
+        {
+          "name": "Header",
+          "UIType": 0,
+          "position": {
+            "x": 0.0,
+            "y": 80.0,
+            "normalized": {
+              "x": 0.0,
+              "y": 1.0,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 80.0,
+            "sqrMagnitude": 6400.0
+          },
+          "size": {
+            "x": 400.0,
+            "y": 40.0,
+            "normalized": {
+              "x": 0.9950372,
+              "y": 0.09950372,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 401.995026,
+            "sqrMagnitude": 161600.0
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "text": "Limited Time Offer!",
+          "imagePath": null,
+          "imageType": 0,
+          "children": [],
+          "address": []
+        },
+        {
+          "name": "Body",
+          "UIType": 0,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "magnitude": 0.0,
+            "sqrMagnitude": 0.0
+          },
+          "size": {
+            "x": 400.0,
+            "y": 120.0,
+            "normalized": {
+              "x": 0.957826257,
+              "y": 0.287347883,
+              "magnitude": 1.0,
+              "sqrMagnitude": 0.99999994
+            },
+            "magnitude": 417.612274,
+            "sqrMagnitude": 174400.0
+          },
+          "color": {
+            "r": 0.9,
+            "g": 0.9,
+            "b": 0.9,
+            "a": 1.0
+          },
+          "text": "",
+          "imagePath": null,
+          "imageType": 0,
+          "children": [
+            {
+              "name": "Image",
+              "UIType": 2,
+              "position": {
+                "x": -150.0,
+                "y": 0.0,
+                "normalized": {
+                  "x": -1.0,
+                  "y": 0.0,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 1.0
+                },
+                "magnitude": 150.0,
+                "sqrMagnitude": 22500.0
+              },
+              "size": {
+                "x": 100.0,
+                "y": 100.0,
+                "normalized": {
+                  "x": 0.707106769,
+                  "y": 0.707106769,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 0.99999994
+                },
+                "magnitude": 141.421356,
+                "sqrMagnitude": 20000.0
+              },
+              "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "text": "",
+              "imagePath": "Assets/Sprites/Zoro.jpeg",
+              "imageType": 0,
+              "children": [],
+              "address": []
+            },
+            {
+              "name": "Description",
+              "UIType": 0,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "magnitude": 0.0,
+                "sqrMagnitude": 0.0
+              },
+              "size": {
+                "x": 200.0,
+                "y": 60.0,
+                "normalized": {
+                  "x": 0.957826257,
+                  "y": 0.287347883,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 0.99999994
+                },
+                "magnitude": 208.806137,
+                "sqrMagnitude": 43600.0
+              },
+              "color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "text": "Get 50% off on your first purchase!",
+              "imagePath": null,
+              "imageType": 0,
+              "children": [],
+              "address": []
+            },
+            {
+              "name": "LearnMoreButton",
+              "UIType": 0,
+              "position": {
+                "x": 50.0,
+                "y": -30.0,
+                "normalized": {
+                  "x": 0.8574929,
+                  "y": -0.51449573,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 1.0
+                },
+                "magnitude": 58.30952,
+                "sqrMagnitude": 3400.0
+              },
+              "size": {
+                "x": 100.0,
+                "y": 30.0,
+                "normalized": {
+                  "x": 0.957826257,
+                  "y": 0.287347883,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 0.99999994
+                },
+                "magnitude": 104.403069,
+                "sqrMagnitude": 10900.0
+              },
+              "color": {
+                "r": 0.2,
+                "g": 0.6,
+                "b": 0.2,
+                "a": 1.0
+              },
+              "text": "Learn More",
+              "imagePath": null,
+              "imageType": 0,
+              "children": [],
+              "address": []
+            },
+            {
+              "name": "BuyNowButton",
+              "UIType": 0,
+              "position": {
+                "x": -50.0,
+                "y": -30.0,
+                "normalized": {
+                  "x": -0.8574929,
+                  "y": -0.51449573,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 1.0
+                },
+                "magnitude": 58.30952,
+                "sqrMagnitude": 3400.0
+              },
+              "size": {
+                "x": 100.0,
+                "y": 30.0,
+                "normalized": {
+                  "x": 0.957826257,
+                  "y": 0.287347883,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 0.99999994
+                },
+                "magnitude": 104.403069,
+                "sqrMagnitude": 10900.0
+              },
+              "color": {
+                "r": 0.8,
+                "g": 0.2,
+                "b": 0.2,
+                "a": 1.0
+              },
+              "text": "Buy Now",
+              "imagePath": null,
+              "imageType": 0,
+              "children": [],
+              "address": []
+            }
+          ],
+          "address": []
+        }
+      ],
+      "address": [
+        0
+      ]
+    },
+    {
+      "name": "ComplexBannerAd",
+      "UIType": 0,
+      "position": {
+        "x": 0.0,
+        "y": 200,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "size": {
+        "x": 400.0,
+        "y": 200.0,
+        "normalized": {
+          "x": 0.8944272,
+          "y": 0.4472136,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 447.2136,
+        "sqrMagnitude": 200000.0
+      },
+      "color": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+      },
+      "text": "",
+      "imagePath": null,
+      "imageType": 0,
+      "children": [
+        {
+          "name": "Header",
+          "UIType": 0,
+          "position": {
+            "x": 0.0,
+            "y": 80.0,
+            "normalized": {
+              "x": 0.0,
+              "y": 1.0,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 80.0,
+            "sqrMagnitude": 6400.0
+          },
+          "size": {
+            "x": 400.0,
+            "y": 40.0,
+            "normalized": {
+              "x": 0.9950372,
+              "y": 0.09950372,
+              "magnitude": 1.0,
+              "sqrMagnitude": 1.0
+            },
+            "magnitude": 401.995026,
+            "sqrMagnitude": 161600.0
+          },
+          "color": {
+            "r": 0.0,
+            "g": 0.0,
+            "b": 0.0,
+            "a": 0.0
+          },
+          "text": "Limited Time Offer!",
+          "imagePath": null,
+          "imageType": 0,
+          "children": [],
+          "address": []
+        },
+        {
+          "name": "Body",
+          "UIType": 0,
+          "position": {
+            "x": 0.0,
+            "y": 0.0,
+            "magnitude": 0.0,
+            "sqrMagnitude": 0.0
+          },
+          "size": {
+            "x": 400.0,
+            "y": 120.0,
+            "normalized": {
+              "x": 0.957826257,
+              "y": 0.287347883,
+              "magnitude": 1.0,
+              "sqrMagnitude": 0.99999994
+            },
+            "magnitude": 417.612274,
+            "sqrMagnitude": 174400.0
+          },
+          "color": {
+            "r": 0.9,
+            "g": 0.9,
+            "b": 0.9,
+            "a": 1.0
+          },
+          "text": "",
+          "imagePath": null,
+          "imageType": 0,
+          "children": [
+            {
+              "name": "Image",
+              "UIType": 2,
+              "position": {
+                "x": -150.0,
+                "y": 0.0,
+                "normalized": {
+                  "x": -1.0,
+                  "y": 0.0,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 1.0
+                },
+                "magnitude": 150.0,
+                "sqrMagnitude": 22500.0
+              },
+              "size": {
+                "x": 100.0,
+                "y": 100.0,
+                "normalized": {
+                  "x": 0.707106769,
+                  "y": 0.707106769,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 0.99999994
+                },
+                "magnitude": 141.421356,
+                "sqrMagnitude": 20000.0
+              },
+              "color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "text": "",
+              "imagePath": "Assets/Sprites/Zoro.jpeg",
+              "imageType": 0,
+              "children": [],
+              "address": []
+            },
+            {
+              "name": "Description",
+              "UIType": 0,
+              "position": {
+                "x": 0.0,
+                "y": 0.0,
+                "magnitude": 0.0,
+                "sqrMagnitude": 0.0
+              },
+              "size": {
+                "x": 200.0,
+                "y": 60.0,
+                "normalized": {
+                  "x": 0.957826257,
+                  "y": 0.287347883,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 0.99999994
+                },
+                "magnitude": 208.806137,
+                "sqrMagnitude": 43600.0
+              },
+              "color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "text": "Get 50% off on your first purchase!",
+              "imagePath": null,
+              "imageType": 0,
+              "children": [],
+              "address": []
+            },
+            {
+              "name": "LearnMoreButton",
+              "UIType": 0,
+              "position": {
+                "x": 50.0,
+                "y": -30.0,
+                "normalized": {
+                  "x": 0.8574929,
+                  "y": -0.51449573,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 1.0
+                },
+                "magnitude": 58.30952,
+                "sqrMagnitude": 3400.0
+              },
+              "size": {
+                "x": 100.0,
+                "y": 30.0,
+                "normalized": {
+                  "x": 0.957826257,
+                  "y": 0.287347883,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 0.99999994
+                },
+                "magnitude": 104.403069,
+                "sqrMagnitude": 10900.0
+              },
+              "color": {
+                "r": 0.2,
+                "g": 0.6,
+                "b": 0.2,
+                "a": 1.0
+              },
+              "text": "Learn More",
+              "imagePath": null,
+              "imageType": 0,
+              "children": [],
+              "address": []
+            },
+            {
+              "name": "BuyNowButton",
+              "UIType": 0,
+              "position": {
+                "x": -50.0,
+                "y": -30.0,
+                "normalized": {
+                  "x": -0.8574929,
+                  "y": -0.51449573,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 1.0
+                },
+                "magnitude": 58.30952,
+                "sqrMagnitude": 3400.0
+              },
+              "size": {
+                "x": 100.0,
+                "y": 30.0,
+                "normalized": {
+                  "x": 0.957826257,
+                  "y": 0.287347883,
+                  "magnitude": 1.0,
+                  "sqrMagnitude": 0.99999994
+                },
+                "magnitude": 104.403069,
+                "sqrMagnitude": 10900.0
+              },
+              "color": {
+                "r": 0.8,
+                "g": 0.2,
+                "b": 0.2,
+                "a": 1.0
+              },
+              "text": "Buy Now",
+              "imagePath": null,
+              "imageType": 0,
+              "children": [],
+              "address": []
+            }
+          ],
+          "address": []
+        }
+      ],
+      "address": [
+        0
+      ]
+    },
+    {
+      "name": "TextLabel",
+      "UIType": 0,
+      "position": {
+        "x": 0.0,
+        "y": 0.0,
+        "magnitude": 0.0,
+        "sqrMagnitude": 0.0
+      },
+      "size": {
+        "x": 200.0,
+        "y": 40.0,
+        "normalized": {
+          "x": 0.9805806,
+          "y": 0.196116135,
+          "normalized": {
+            "x": 0.9805807,
+            "y": 0.196116149,
+            "magnitude": 1.0,
+            "sqrMagnitude": 1.0
+          },
+          "magnitude": 0.99999994,
+          "sqrMagnitude": 0.9999999
+        },
+        "magnitude": 203.960785,
+        "sqrMagnitude": 41600.0
+      },
+      "color": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "text": "Special Offer!",
+      "imagePath": null,
+      "imageType": 0,
+      "children": [],
+      "address": []
+    },
+    {
+      "name": "ClickButton",
+      "UIType": 0,
+      "position": {
+        "x": 0.0,
+        "y": -30.0,
+        "normalized": {
+          "x": 0.0,
+          "y": -1.0,
+          "magnitude": 1.0,
+          "sqrMagnitude": 1.0
+        },
+        "magnitude": 30.0,
+        "sqrMagnitude": 900.0
+      },
+      "size": {
+        "x": 100.0,
+        "y": 30.0,
+        "normalized": {
+          "x": 0.957826257,
+          "y": 0.287347883,
+          "magnitude": 1.0,
+          "sqrMagnitude": 0.99999994
+        },
+        "magnitude": 104.403069,
+        "sqrMagnitude": 10900.0
+      },
+      "color": {
+        "r": 0.2,
+        "g": 0.6,
+        "b": 0.2,
+        "a": 1.0
+      },
+      "text": "Click Me",
+      "imagePath": null,
+      "imageType": 0,
+      "children": [],
+      "address": []
+    }
+  ],
+  "address": []
+}

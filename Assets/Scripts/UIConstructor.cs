@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +31,7 @@ public class UIConstructor : MonoBehaviour
         try
         {
             UIElement rootElement = JsonConvert.DeserializeObject<UIElement>(json);
-            ConstructUI(rootElement, CanvasObject.transform);
+            ConstructUI(rootElement, CanvasObject.transform,new List<int>());
             return true;
         }
         catch (System.Exception e)
@@ -45,9 +46,9 @@ public class UIConstructor : MonoBehaviour
         print($"Invalid JSON: Message:{e.Message}\n StackTrace:{e.StackTrace}");
     }
 
-    public void ConstructUI(UIElement element, Transform parentTransform)
+    public void ConstructUI(UIElement element, Transform parentTransform, List<int> address)
     {
-        GameObject newElement = new GameObject(element.name);
+        GameObject newElement = new GameObject($"{element.name}_{string.Join("-", address)}");
         newElement.transform.SetParent(parentTransform);
         newElement.transform.localPosition = element.position;
         RectTransform rectTransform = newElement.AddComponent<RectTransform>();
@@ -69,10 +70,13 @@ public class UIConstructor : MonoBehaviour
             CreateText(newElement.transform, element.text);
         }
 
-        // Create children recursively
-        foreach (UIElement child in element.children)
+
+        for (int i = 0; i < element.children.Count; i++)
         {
-            ConstructUI(child, newElement.transform);
+            UIElement child = element.children[i];
+            address.Add(i);
+            ConstructUI(child, newElement.transform, address);
+            address.RemoveAt(address.Count - 1);
         }
     }
 

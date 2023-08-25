@@ -10,12 +10,13 @@ public class TemplateEditorWindow : EditorWindow
     private const string PathToTemplates = "Assets/Templates";
     private const string BlueprintJsonPath = "Assets/Templates/Example/Example.json";
     private string[] fileNames;
-    [SerializeField] string selectedFileContent, previousSelectedFileContent, selectedButton;
+    string selectedFileContent, previousSelectedFileContent, selectedButton;
     private int selectedIndex = -1;
     private UIConstructor uiConstructor;
     private Vector2 scrollPositionJSONView;
-    [SerializeField] private UIElement selectedUIElement;
-    [SerializeField] private bool validJson;
+    private UIElement selectedUIElement;
+    private bool validJson;
+    public List<int> address = new List<int>();
 
     UIElement insertUIElement;
 
@@ -99,18 +100,29 @@ public class TemplateEditorWindow : EditorWindow
             if (GUILayout.Button("InsertUIElement"))
             {
                 insertUIElement = new UIElement();
+                insertUIElement.color = new SerializableColor(Color.white);
                 selectedButton = "InsertUIElement";
             }
 
             if (GUILayout.Button("InsertTemplate"))
                 selectedButton = "InsertTemplate";
 
+            if (GUILayout.Button("RemoveUIElement"))
+                selectedButton = "RemoveUIElement";
+
             EditorGUILayout.EndHorizontal();
 
-            if (selectedButton == "InsertTemplate") ShowAvailableTemplates();
+            if (selectedButton == "InsertTemplate")
+                ShowAvailableTemplates();
 
             if (selectedButton == "InsertUIElement" || selectedButton == "Template")
+            {
+
                 DrawUIElementEditor(insertUIElement);
+            }
+
+            if (selectedButton == "RemoveUIElement")
+                DrawRemovalAddress();
         }
         else
         {
@@ -227,8 +239,31 @@ public class TemplateEditorWindow : EditorWindow
         for (int i = 0; i < insertUIElement.address.Count; i++)
             insertUIElement.address[i] = EditorGUILayout.IntField("Address Element " + (i + 1), insertUIElement.address[i]);
 
+        UpdateJSONTextArea();
 
         if (GUILayout.Button("Insert")) InsertEditedUIElement(insertUIElement);
+    }
+
+    private void DrawRemovalAddress()
+    {
+        int addressCount = address.Count;
+        addressCount = EditorGUILayout.IntField("Address Count:", addressCount);
+
+        // Adjust the size of the address list
+        while (address.Count < addressCount)
+            address.Add(0);
+
+        while (address.Count > addressCount)
+            address.RemoveAt(address.Count - 1);
+
+        for (int i = 0; i < address.Count; i++)
+            address[i] = EditorGUILayout.IntField("Address Element " + (i + 1), address[i]);
+
+        if (GUILayout.Button("Remove"))
+        {
+            selectedUIElement.RemoveUIElement(address);
+            UpdateJSONTextArea();
+        }
     }
 
     private SerializableColor SerializableColorField(string label, SerializableColor value)
@@ -242,14 +277,17 @@ public class TemplateEditorWindow : EditorWindow
 
     private void InsertEditedUIElement(UIElement uiElement)
     {
+        if (selectedUIElement == null) selectedUIElement = uiElement;
+        else selectedUIElement.InsertUIElement(uiElement);
+        UpdateJSONTextArea();
+    }
+
+    private void UpdateJSONTextArea()
+    {
         var settings = new JsonSerializerSettings
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
         };
-
-        if (selectedUIElement == null) selectedUIElement = uiElement;
-        else selectedUIElement.InsertUIElement(uiElement);
-
         selectedFileContent = JsonConvert.SerializeObject(selectedUIElement, Formatting.Indented, settings);
     }
 
