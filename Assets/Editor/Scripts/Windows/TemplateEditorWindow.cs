@@ -20,6 +20,11 @@ public class TemplateEditorWindow : EditorWindow
 
     UIElement insertUIElement;
 
+    private SerializedObject serializedObject;
+    private SerializedProperty textAreaContent;
+
+    private TextData textData;
+
     [MenuItem("Window/Template Editor")]
     public static void ShowWindow()
     {
@@ -63,6 +68,7 @@ public class TemplateEditorWindow : EditorWindow
     }
     private void DrawRightSection()
     {
+
         if (selectedIndex != -1)
         {
             EditorGUILayout.BeginHorizontal();
@@ -82,15 +88,24 @@ public class TemplateEditorWindow : EditorWindow
 
             EditorGUILayout.EndHorizontal();
 
-            scrollPositionJSONView = EditorGUILayout.BeginScrollView(scrollPositionJSONView, GUILayout.Height(position.height * 0.55f)); // You can adjust the height as needed
-            selectedFileContent = EditorGUILayout.TextArea(selectedFileContent, GUILayout.ExpandHeight(true));
-            bool jsonUpdated = !selectedFileContent.Equals(previousSelectedFileContent);
-            previousSelectedFileContent = selectedFileContent;
+            serializedObject.Update();
+
+            scrollPositionJSONView = EditorGUILayout.BeginScrollView(scrollPositionJSONView, GUILayout.Height(position.height * 0.55f));
+            EditorGUILayout.PropertyField(textAreaContent, GUIContent.none, GUILayout.ExpandHeight(true));
+
+            //selectedFileContent = EditorGUILayout.TextArea(selectedFileContent, GUILayout.ExpandHeight(true));
+            bool jsonUpdated = !textData.text.Equals(previousSelectedFileContent);
+            previousSelectedFileContent = textData.text;
             EditorGUILayout.EndScrollView();
 
             if (jsonUpdated)
             {
                 HandleVisualization();
+            }
+
+            if (serializedObject.ApplyModifiedProperties())
+            {
+                Undo.RecordObject(textData, "Edit Text Area");
             }
 
             if (GUILayout.Button("Save")) SaveFile();
@@ -170,8 +185,8 @@ public class TemplateEditorWindow : EditorWindow
         if (uiConstructor == null)
             uiConstructor = new GameObject("UIConstructor").AddComponent<UIConstructor>();
 
-        if (!string.IsNullOrEmpty(selectedFileContent))
-            validJson = uiConstructor.ConstructUI(selectedFileContent);
+        if (!string.IsNullOrEmpty(textData.text))
+            validJson = uiConstructor.ConstructUI(textData.text);
     }
 
     private void CreateNewTemplate()
@@ -288,7 +303,7 @@ public class TemplateEditorWindow : EditorWindow
         {
             ReferenceLoopHandling = ReferenceLoopHandling.Ignore
         };
-        selectedFileContent = JsonConvert.SerializeObject(selectedUIElement, Formatting.Indented, settings);
+        textData.text = JsonConvert.SerializeObject(selectedUIElement, Formatting.Indented, settings);
     }
 
     private void DeleteCurrentUI()
@@ -304,16 +319,17 @@ public class TemplateEditorWindow : EditorWindow
     #region FileHandling
     private void SaveFile()
     {
-        File.WriteAllText(Path.Combine(PathToTemplates, fileNames[selectedIndex] + ".json"), selectedFileContent);
+        File.WriteAllText(Path.Combine(PathToTemplates, fileNames[selectedIndex] + ".json"), textData.text);
         AssetDatabase.Refresh();
     }
 
     private void SelectFile(int index)
     {
         selectedIndex = index;
-        selectedFileContent = File.ReadAllText(Path.Combine(PathToTemplates, fileNames[index] + ".json"));
-        selectedUIElement = JsonConvert.DeserializeObject<UIElement>(selectedFileContent);
-        insertUIElement = JsonConvert.DeserializeObject<UIElement>(selectedFileContent);
+        textData.text = File.ReadAllText(Path.Combine(PathToTemplates, fileNames[index] + ".json"));
+        selectedUIElement = JsonConvert.DeserializeObject<UIElement>(textData.text);
+        insertUIElement = JsonConvert.DeserializeObject<UIElement>(textData.text);
+
     }
 
     private void LoadFileNames()
@@ -329,7 +345,7 @@ public class TemplateEditorWindow : EditorWindow
     private void DeselectFile()
     {
         selectedIndex = -1;
-        selectedFileContent = null;
+        textData.text = null;
     }
 
     private void RenameFile(object index)
@@ -396,6 +412,10 @@ public class TemplateEditorWindow : EditorWindow
     {
         LoadFileNames();
         uiConstructor = FindObjectOfType<UIConstructor>();
+
+        textData = ScriptableObject.CreateInstance<TextData>();
+        serializedObject = new SerializedObject(textData);
+        textAreaContent = serializedObject.FindProperty("text");
     }
 
     private void OnDestroy()
